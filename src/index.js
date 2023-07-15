@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import './';
+import Transaction from './components/home/Transaction';
 import Charitycard from './components/home/Charitycard';
+
 import Search from './components/home/Search';
 import CharityPage from './components/home/CharityPage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
