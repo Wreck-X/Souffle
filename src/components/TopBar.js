@@ -32,7 +32,9 @@ function TopBar() {
                     <li class="text-3xl inline tracking-[.20em]">Souffle</li>
                 </div>
                 <div>
-                        <li class="transition ease-in-out cursor-pointer w-12 h-12 hover:bg-[#DDDDDD] flex items-center justify-center rounded-full p-1"><Link to="/home"><Home set="bold" primaryColor="black"/></Link></li>
+                    <Link to="/">
+                        <li class="transition ease-in-out cursor-pointer w-12 h-12 hover:bg-[#DDDDDD] flex items-center justify-center rounded-full p-1"><Home set="bold" primaryColor="black" /></li>
+                    </Link>
                 </div>
             </ol>
         </div>
