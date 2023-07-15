@@ -34,8 +34,8 @@ function TopBar() {
                 <div>
                         <li class="inline hover:underline cursor-pointer"><NavLink to="/home">Home</NavLink></li>
                 </div>
-            </ol >
-        </ div >
+            </ol>
+        </div>
 
     )
 
