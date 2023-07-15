@@ -1,0 +1,12 @@
+{
+    "canisters": {
+        "Baguette": {
+            "type": "custom",
+            "build": "python -m kybra Baguette src/main.py src/main.did",
+            "post_install": ".kybra/Baguette/post_install.sh",
+            "candid": "src/main.did",
+            "wasm": ".kybra/Baguette/Baguette.wasm",
+            "gzip": true
+        }
+    }
+}
