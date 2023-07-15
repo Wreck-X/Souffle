@@ -22,11 +22,11 @@ function TopBar() {
     return (
         <div className={`sticky top-0 bg-white z-10 ${showBorder ? 'border-b-2 border-opacity-100 border-transition' : ''}`}>
             < ol class="flex justify-evenly items-center p-4 font-bold" >
-                <div>
-                    <li class="inline"><ChevronLeft /></li>
+                <div className='bg-black h-12 w-12 '>
+                    <li class="inline "><ChevronLeft /></li>
                 </div>
-                <div>
-                    <li class="text-3xl inline">Souffle</li>
+                <div className=' '>
+                    <li class="text-3xl inline tracking-[.20em]">Souffle</li>
                 </div>
                 <div>
                     <li class="inline hover:underline cursor-pointer">Home</li>
