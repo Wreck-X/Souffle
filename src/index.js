@@ -10,15 +10,14 @@ import Charitycard from './components/home/Charitycard';
 import Search from './components/home/Search';
 import CharityPage from './components/home/CharityPage';
 import Graph from './components/home/Graph';
-import Landing from './components/home/Landing';
-root = ReactDOM.createRoot(document.getElementById('root'));
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
 <BrowserRouter >
       <App />
     </BrowserRouter>
 
-    <Graph></Graph>
 
 
   </React.StrictMode>
