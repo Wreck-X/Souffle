@@ -3,6 +3,7 @@ import Search from '../components/Search'
 import Charitycard from '../components/Charitycard'
 import TopBar from '../components/TopBar'
 import '../styles/charitypage.css'
+import { Link } from 'react-router-dom'
 
 function Home() {
     return (
@@ -13,16 +14,18 @@ function Home() {
                 <Search />
             </div>
             <div className='grid items-center lg:grid-cols-3 md:grid-cols-2 lg:mx-48 md:mx-0 gap-y-9 my-9 place-items-center justify '>
-                <Charitycard></Charitycard>
-                <Charitycard></Charitycard>
-                <Charitycard></Charitycard>
-                <Charitycard></Charitycard>
-                <Charitycard></Charitycard>
-                <Charitycard></Charitycard>
-                <Charitycard></Charitycard>
-                <Charitycard></Charitycard>
-                <Charitycard></Charitycard>
-                <Charitycard></Charitycard>
+                <Link to="/transactions">
+                    <Charitycard />
+                    <Charitycard />
+                    <Charitycard />
+                    <Charitycard />
+                    <Charitycard />
+                    <Charitycard />
+                    <Charitycard />
+                    <Charitycard />
+                    <Charitycard />
+                    <Charitycard />
+                </Link>
             </div>
         </>
 
