@@ -23,6 +23,7 @@ export default function CharityPage() {
         <Charitycard></Charitycard>
         <Charitycard></Charitycard>
         <Charitycard></Charitycard>
+        <Charitycard></Charitycard>
       </div>  
     </div>
   )
