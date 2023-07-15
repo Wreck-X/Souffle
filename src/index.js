@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+
 import { BrowserRouter } from 'react-router-dom'
 import App from './App';
+
+import Transaction from './components/home/Transaction';
+import Charitycard from './components/home/Charitycard';
+import Search from './components/home/Search';
+import CharityPage from './components/home/CharityPage';
+import Graph from './components/home/Graph';
+import Landing from './components/home/Landing';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

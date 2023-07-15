@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/buttons.css'
 export default function Landing() {
   return (
-    <div className='grid'>
+    <div className='grid bg-white'>
       <div className='h-40 w-40 z-40 top-0 left-0 fixed m-10 border-t-8 border-l-8 border-black rounded-tr-lg rounded-bl-lg  '></div>
       <div className='h-40 w-40 z-40 top-0 right-0 fixed m-10 border-t-8 border-r-8 border-black rounded-tl-lg rounded-br-lg '></div>
       <div className='h-40 w-40 z-40 bottom-0 left-0 fixed m-10 border-b-8 border-l-8 border-black rounded-tl-lg rounded-br-lg '></div>
