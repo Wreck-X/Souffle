@@ -35,7 +35,7 @@ function PaymentCard(props) {
         <Card
           css={{ borderRadius: "2rem", height: "700px", width: "720px" }}         
         >
-          <div className="flex flex-col justify-center mx-auto">
+          <div className="flex flex-col justify-center items-center mx-auto">
             <h1 className="text-5xl font-bold mt-20">Transfer Money</h1>
             <div className="mt-5">
               <Input
