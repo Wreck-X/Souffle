@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/buttons.css'
+import { Link } from 'react-router-dom'
 
 export default function Landing() {
   return (
@@ -15,9 +16,10 @@ export default function Landing() {
         <div className='grid place-content-center text-2xl'>
           Building a transparent future for charities using blockchain innovation.
         </div>
-        <div className="box-1 pt-6 mt-5">
-          <div class="btn btn-one text-[23px] w-[10rem]">
-            <span>Try Now!</span>
+        <div className="pt-6 mt-5 box-1">
+          <div class="btn btn-one text-3xl w-1 ">
+            <span>
+              <Link to='/home'>Try Now!</Link></span>
           </div>
         </div>
       </div>
