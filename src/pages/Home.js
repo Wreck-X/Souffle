@@ -6,7 +6,7 @@ import '../styles/charitypage.css'
 
 function Home() {
     return (
-        <div className=''>
+        <>
             <TopBar></TopBar>
             <div className='h-[2rem]'></div>
             <div className='flex justify-center'>
@@ -24,7 +24,9 @@ function Home() {
                 <Charitycard></Charitycard>
                 <Charitycard></Charitycard>
             </div>
-        </div>
+        </>
+
+
     )
 }
 

@@ -13,7 +13,7 @@ export default function Landing() {
         <div className='grid place-content-center text-9xl tracking-[.20em] font-montserrat p-2'>
           Souffle
         </div>
-        <div className='grid text-2xl place-content-center '>
+        <div className='grid place-content-center text-2xl'>
           Building a transparent future for charities using blockchain innovation.
         </div>
         <div className="pt-6 mt-5 box-1">
