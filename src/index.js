@@ -11,8 +11,7 @@ import Search from './components/home/Search';
 import CharityPage from './components/home/CharityPage';
 import Graph from './components/home/Graph';
 import Landing from './components/home/Landing';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
 <BrowserRouter >
@@ -20,6 +19,7 @@ root.render(
     </BrowserRouter>
 
     <Graph></Graph>
+
 
   </React.StrictMode>
 );
