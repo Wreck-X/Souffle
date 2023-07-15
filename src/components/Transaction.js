@@ -10,7 +10,7 @@ function Transaction(props) {
     if (props.income) {
         return (
             <>
-                <Card css={{ borderRadius: '0.3rem', height: '3rem', width: '22rem' }} isHoverable={true} isPressable={true}>
+                <Card css={{ borderRadius: '0.3rem', height: '6rem', width: '22rem' }} isHoverable={true} isPressable={true}>
                     <div className='flex items-center h-full justify-evenly'>
                         <div className='text-xl font-semibold text-red-500'>-${props.amount}</div>
                         <div className='text-xs text-slate-500'>{props.date + " " + props.time}</div>
@@ -22,16 +22,15 @@ function Transaction(props) {
                                 <Button size='sm' color={"black"} auto ghost icon={<User />} />
                         </Tooltip>
                         </div>
-
                     </div >
                 </Card >
-
+                <div className='h-4'></div>
             </>
         )
     } else {
         return (
             <>
-                <Card css={{ borderRadius: '0.3rem', height: '3rem', width: '22rem' }} isHoverable={true} isPressable={true}>
+                <Card css={{ borderRadius: '0.3rem', height: '6rem', width: '80%',marginInline: '50px',borderRadius: '10px' }} isHoverable={true} isPressable={true}>
                     <div className='flex items-center h-full justify-evenly'>
                         <div className='text-xl font-semibold text-red-500'>-${props.amount}</div>
                         <div className='text-xs text-slate-500'>{props.date + " " + props.time}</div>
@@ -43,10 +42,9 @@ function Transaction(props) {
                                 <Button size='sm' color={"black"} auto ghost icon={<User />} />
                         </Tooltip>
                         </div>
-
                     </div >
                 </Card >
-
+                <div className='h-4'></div>
             </>
         )
     }
