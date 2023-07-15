@@ -4,10 +4,11 @@ import './index.css';
 import './';
 import Charitycard from './components/home/Charitycard';
 import Search from './components/home/Search';
+import CharityPage from './components/home/CharityPage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Search/>
+    <CharityPage/>
   </React.StrictMode>
 );
 
