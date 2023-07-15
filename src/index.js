@@ -6,10 +6,11 @@ import Charitycard from './components/home/Charitycard';
 
 import Search from './components/home/Search';
 import CharityPage from './components/home/CharityPage';
+import Graph from './components/home/Graph';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CharityPage/>
+    <CharityPage></CharityPage>
   </React.StrictMode>
 );
 
