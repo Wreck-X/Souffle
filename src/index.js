@@ -4,10 +4,12 @@ import './index.css';
 import Transaction from './components/home/Transaction';
 import Charitycard from './components/home/Charitycard';
 import './';
+import TopBar from './components/TopBar';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-   <Transaction amount="558" income={false} id="oaqweo2jdq2" date="24 July" time="23:23" to="To: coke"></Transaction>
+    <TopBar />
+    <Transaction amount="558" income={false} id="oaqweo2jdq2" date="24 July" time="23:23" to="To: coke"></Transaction>
    <Transaction amount="5999" income={true} id="oaqweo2jdq2" date="24 July" time="23:23" from="From: Annoynmous"></Transaction>
     <Charitycard/>
   </React.StrictMode>
