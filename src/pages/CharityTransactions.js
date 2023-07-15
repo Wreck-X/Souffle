@@ -4,6 +4,9 @@ import Transaction from '../components/Transaction'
 import Graph from '../components/Graph'
 
 export default function CharityTransactions() {
+  const handleTransfer = () => {
+    window.location.href = '/payment';
+  }
   return (
     <>
     <TopBar></TopBar>
@@ -23,7 +26,7 @@ export default function CharityTransactions() {
         <div className='flex flex-col'>
             <Graph></Graph>
             <div className='grid place-content-center h-full'>
-            <div class="btn btn-one flex justify-center items-center text-[23px] w-[20rem] h-[10rem]">
+            <div class="btn btn-one flex justify-center items-center text-[23px] w-[20rem] h-[10rem]" onClick={handleTransfer}>
                 <span>TRANSFER</span>
             </div>
             </div>
