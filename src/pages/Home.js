@@ -3,7 +3,6 @@ import Search from '../components/Search'
 import Charitycard from '../components/Charitycard'
 import TopBar from '../components/TopBar'
 import '../styles/charitypage.css'
-import { Outlet } from 'react-router-dom'
 
 function Home() {
     const list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
