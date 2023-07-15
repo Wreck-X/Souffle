@@ -1,4 +1,0 @@
-service : {
-  append: (text) -> ();
-  getItems: () -> (vec text);
-}
