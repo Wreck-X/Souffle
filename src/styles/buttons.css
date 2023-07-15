@@ -31,11 +31,7 @@ div[class*=box] {
 	border-radius: 10px;
 }
 
-/* 
-========================
-      BUTTON ONE
-========================
-*/
+
 .btn-one {
 	color: #000000;
 	transition: all 0.3s;
