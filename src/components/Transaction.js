@@ -12,8 +12,8 @@ function Transaction(props) {
             <>
                 <Card css={{ borderRadius: '0.3rem', height: 'auto', width: '22rem' }} isHoverable={true} isPressable={true}>
                     <div className='flex items-center justify-between'>
-                        <div className='font-bold text-2xl text-green-500 mr-1 ml-1'>+${props.amount.toString().padStart(6, '0')}</div>
-                        <div className='text-slate-500 text-xs mr-5'>{props.id}</div>
+                        <div className='ml-1 mr-1 text-2xl font-bold text-green-500'>+${props.amount.toString().padStart(6, '0')}</div>
+                        <div className='mr-5 text-xs text-slate-500'>{props.id}</div>
                         <Tooltip content={props.date + " " + props.time}>
                             <Button css={{ borderRadius: '0.3rem', m: 4 }} size='sm' color={"black"} auto ghost icon={<TimeSquare primaryColor='black' />} />
                         </Tooltip>
@@ -31,19 +31,19 @@ function Transaction(props) {
     } else {
         return (
             <>
-                <Card css={{ borderRadius: '0.3rem', height: 'auto', width: '22rem' }} isHoverable={true} isPressable={true}>
-                    <div className='flex items-center justify-between'>
-                        <div className='font-bold text-2xl text-red-500 mr-1 ml-1'>-${props.amount.toString().padStart(6, '0')}</div>
-                        <div className='text-slate-500 text-xs mr-5'>{props.id}</div>
-                        <Tooltip content={props.date + " " + props.time}>
-                            <Button css={{ borderRadius: '0.3rem', m: 4 }} size='sm' color={"black"} auto ghost icon={<TimeSquare primaryColor='black' />} />
-                        </Tooltip>
+                <Card css={{ borderRadius: '0.3rem', height: '3rem', width: '22rem' }} isHoverable={true} isPressable={true}>
+                    <div className='flex items-center h-full justify-evenly'>
+                        <div className='text-xl font-semibold text-red-500'>-${props.amount}</div>
+                        <div className='text-xs text-slate-500'>{props.date + " " + props.time}</div>
+                        <div className='flex gap-[8px]'>
                         <Tooltip content={props.id}>
-                            <Button css={{ borderRadius: '0.3rem', m: 4 }} size='sm' color={"black"} auto ghost icon={<Document />} />
+                                <Button size='sm' color={"black"} auto ghost icon={<Document />} />
                         </Tooltip>
                         <Tooltip content={props.to}>
-                            <Button css={{ borderRadius: '0.3rem', m: 4 }} size='sm' color={"black"} auto ghost icon={<User />} />
+                                <Button size='sm' color={"black"} auto ghost icon={<User />} />
                         </Tooltip>
+                        </div>
+
                     </div >
                 </Card >
 
