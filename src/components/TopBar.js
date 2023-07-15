@@ -2,9 +2,6 @@ import React from 'react'
 import { ChevronLeft } from 'react-iconly'
 import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import Home from '../pages/Home'
-import Landing from '../pages/Landing'
-
 import '../styles/topbar.css'
 
 function TopBar() {
@@ -28,10 +25,10 @@ function TopBar() {
 
         <div className={`sticky top-0 bg-white z-10 ${showBorder ? 'border-b-2 border-opacity-100 border-transition' : ''}`}>
             < ol class="flex justify-evenly items-center p-4 font-bold" >
-                <div className='bg-black h-12 w-12 '>
+                <div className='w-12 h-12 bg-black '>
                     <li class="inline "><ChevronLeft /></li>
                 </div>
-                <div className=' '>
+                <div className=''>
                     <li class="text-3xl inline tracking-[.20em]">Souffle</li>
                 </div>
                 <div>
