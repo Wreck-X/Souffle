@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card } from '@nextui-org/react'
 import { Button } from '@nextui-org/react'
-import { TimeSquare } from 'react-iconly'
 import { Document } from 'react-iconly'
 import { User } from 'react-iconly'
 import { Tooltip } from '@nextui-org/react'
@@ -22,10 +21,8 @@ function Transaction(props) {
                                 <Button size='sm' color={"black"} auto ghost icon={<User />} />
                         </Tooltip>
                         </div>
-
                     </div >
                 </Card >
-
             </>
         )
     } else {
@@ -43,10 +40,8 @@ function Transaction(props) {
                                 <Button size='sm' color={"black"} auto ghost icon={<User />} />
                         </Tooltip>
                         </div>
-
                     </div >
                 </Card >
-
             </>
         )
     }

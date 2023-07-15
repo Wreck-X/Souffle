@@ -34,8 +34,8 @@ function TopBar() {
                 <div>
                         <li class="transition ease-in-out cursor-pointer w-12 h-12 hover:bg-[#DDDDDD] flex items-center justify-center rounded-full p-1"><NavLink to="/home"><Home set="bold" primaryColor="black"/></NavLink></li>
                 </div>
-            </ol >
-        </ div >
+            </ol>
+        </div>
 
     )
 
