@@ -1,0 +1,14 @@
+DFX = dfx
+PROJECT = ListContract
+CANISTER = list_contract
+
+all: build
+
+build:
+	$(DFX) build $(CANISTER)
+
+deploy: build
+	$(DFX) canister install $(CANISTER)
+
+clean:
+	$(DFX) clean

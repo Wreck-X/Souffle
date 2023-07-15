@@ -1,0 +1,7 @@
+{
+  "canisters": {
+    "transactions": {
+      "main": "src/Main.mo"
+    }
+  }
+}
