@@ -1,8 +1,0 @@
-.border-transition {
-    transition: border-color 2s;
-    border-color: transparent;
-  }
-  
-  .border-transition.border-opacity-100 {
-    border-color: rgb(43, 43, 43);
-  }
