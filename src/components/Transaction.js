@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card } from '@nextui-org/react'
 import { Button } from '@nextui-org/react'
-import { TimeSquare } from 'react-iconly'
 import { Document } from 'react-iconly'
 import { User } from 'react-iconly'
 import { Tooltip } from '@nextui-org/react'
@@ -10,43 +9,43 @@ function Transaction(props) {
     if (props.income) {
         return (
             <>
-                <Card css={{ borderRadius: '0.3rem', height: 'auto', width: '22rem' }} isHoverable={true} isPressable={true}>
-                    <div className='flex items-center justify-between'>
-                        <div className='font-bold text-2xl text-green-500 mr-1 ml-1'>+${props.amount.toString().padStart(6, '0')}</div>
-                        <div className='text-slate-500 text-xs mr-5'>{props.id}</div>
-                        <Tooltip content={props.date + " " + props.time}>
-                            <Button css={{ borderRadius: '0.3rem', m: 4 }} size='sm' color={"black"} auto ghost icon={<TimeSquare primaryColor='black' />} />
-                        </Tooltip>
+                <Card css={{ borderRadius: '0.3rem', height: '6rem', width: '22rem' }} isHoverable={true} isPressable={true}>
+                    <div className='flex items-center h-full justify-evenly'>
+                        <div className='text-xl font-semibold text-red-500'>-${props.amount}</div>
+                        <div className='text-xs text-slate-500'>{props.date + " " + props.time}</div>
+                        <div className='flex gap-[8px]'>
                         <Tooltip content={props.id}>
-                            <Button css={{ borderRadius: '0.3rem', m: 4 }} size='sm' color={"black"} auto ghost icon={<Document />} />
+                                <Button size='sm' color={"black"} auto ghost icon={<Document />} />
                         </Tooltip>
-                        <Tooltip content={props.from}>
-                            <Button css={{ borderRadius: '0.3rem', m: 4 }} size='sm' color={"black"} auto ghost icon={<User />} />
+                            <Tooltip content={props.to}>
+                                <Button size='sm' color={"black"} auto ghost icon={<User />} />
                         </Tooltip>
+                        </div>
                     </div >
                 </Card >
+
+                <div className='h-4'></div>
 
             </>
         )
     } else {
         return (
             <>
-                <Card css={{ borderRadius: '0.3rem', height: 'auto', width: '22rem' }} isHoverable={true} isPressable={true}>
-                    <div className='flex items-center justify-between'>
-                        <div className='font-bold text-2xl text-red-500 mr-1 ml-1'>-${props.amount.toString().padStart(6, '0')}</div>
-                        <div className='text-slate-500 text-xs mr-5'>{props.id}</div>
-                        <Tooltip content={props.date + " " + props.time}>
-                            <Button css={{ borderRadius: '0.3rem', m: 4 }} size='sm' color={"black"} auto ghost icon={<TimeSquare primaryColor='black' />} />
-                        </Tooltip>
+                <Card css={{ borderRadius: '0.3rem', height: '6rem', width: '80%',marginInline: '50px',borderRadius: '10px' }} isHoverable={true} isPressable={true}>
+                    <div className='flex items-center h-full justify-evenly'>
+                        <div className='text-xl font-semibold text-red-500'>-${props.amount}</div>
+                        <div className='text-xs text-slate-500'>{props.date + " " + props.time}</div>
+                        <div className='flex gap-[8px]'>
                         <Tooltip content={props.id}>
-                            <Button css={{ borderRadius: '0.3rem', m: 4 }} size='sm' color={"black"} auto ghost icon={<Document />} />
+                                <Button size='sm' color={"black"} auto ghost icon={<Document />} />
                         </Tooltip>
                         <Tooltip content={props.to}>
-                            <Button css={{ borderRadius: '0.3rem', m: 4 }} size='sm' color={"black"} auto ghost icon={<User />} />
+                                <Button size='sm' color={"black"} auto ghost icon={<User />} />
                         </Tooltip>
+                        </div>
                     </div >
                 </Card >
-
+                <div className='h-4'></div>
             </>
         )
     }
