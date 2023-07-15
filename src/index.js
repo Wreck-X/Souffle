@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import './';
 import Charitycard from './components/home/Charitycard';
+import Search from './components/home/Search';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Charitycard/>
+    <Search/>
   </React.StrictMode>
 );
 
