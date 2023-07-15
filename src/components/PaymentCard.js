@@ -8,7 +8,7 @@ function PayPal() {
       <img
         src="https://rangers.co.th/wp-content/uploads/2018/09/paypal-logotype-png-510.png"
         alt="Secure payment in PayPal"
-        className="h-[6rem] w-[13rem] ml-[88vw]"
+        className="h-[6rem] w-[13rem]"
       />
     </>
   );
@@ -17,7 +17,7 @@ function PayPal() {
 function Input(props) {
   return (
     <>
-      <div className="flex flex-col mt-20">
+      <div className="flex flex-col mt-10">
         <label className="text-xl">{props.label}</label>
         <input
           placeholder={props.placeholder}
@@ -32,25 +32,33 @@ function PaymentCard(props) {
   return (
     <>
       <div className="flex justify-center items-center mt-14">
-        <Card
-          css={{ borderRadius: "2rem", height: "700px", width: "720px" }}         
-        >
+        <Card css={{ borderRadius: "2rem", height: "720px", width: "720px" }}>
           <div className="flex flex-col justify-center mx-auto">
-            <h1 className="text-5xl font-bold mt-20">Transfer Money</h1>
-            <div className="mt-5">
+            <h1 className="text-5xl font-bold mt-16 mb-8">Transfer Money</h1>
+            <div className="mt-2">
+              <label className="text-xl">Bank ID</label>
+              <div className="z-1 bg-gray-200 text-lg lg:min-w-[30rem] min-h-[4rem] md:min-w-[20rem] sm:min-w-[20rem] min-w-[10rem] rounded-full drop-shadow-lg p-5 text-black outline-none mt-2">
+                <div>{props.bankID}</div>
+              </div>
               <Input
                 label="PayPal ID"
                 placeholder="Enter your email, phone or id"
               />
               <Input label="Amount (in USD)" placeholder="Enter amount" />
             </div>
-            <Button className="mx-auto w-[10rem] h-[3rem] rounded-full mt-[5rem] text-black outline outline-1">
-              Transfer
-            </Button>
+            <div className="flex flex-col mt-14">
+              <div className="grid place-content-center h-full">
+                <div class="btn btn-one flex justify-center items-center text-[23px] w-[8rem] h-[4rem]">
+                  <span>TRANSFER</span>
+                </div>
+              </div>
+            </div>
           </div>
         </Card>
       </div>
-      <PayPal />
+      <div className="flex justify-end">
+        <PayPal />
+      </div>
     </>
   );
 }
