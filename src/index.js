@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Transaction from './components/home/Transaction';
-import Charitycard from './components/home/Charitycard';
-import Search from './components/home/Search';
-import CharityPage from './components/home/CharityPage';
-import Graph from './components/home/Graph';
+import { BrowserRouter } from 'react-router-dom'
+import App from './App';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CharityPage></CharityPage>
+    <BrowserRouter >
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
