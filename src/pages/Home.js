@@ -7,7 +7,7 @@ import '../styles/charitypage.css'
 function Home() {
     const list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     return (
-        <div className=''>
+        <>
             <TopBar></TopBar>
             <div className='h-[2rem]'></div>
             <div className='flex justify-center'>
@@ -25,7 +25,9 @@ function Home() {
                 <Charitycard></Charitycard>
                 <Charitycard></Charitycard>
             </div>
-        </div>
+        </>
+
+
     )
 }
 
