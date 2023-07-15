@@ -9,7 +9,7 @@ import Graph from './components/home/Graph';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CharityPage></CharityPage>
+    <Graph></Graph>
   </React.StrictMode>
 );
 
