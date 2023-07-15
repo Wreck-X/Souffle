@@ -2,14 +2,24 @@ import React from 'react'
 import '../../styles/card.css'
 export default function Charitycard(props) {
   return (
-      <div className="flex card h-[17rem] w-[28rem] sm:w-[28rem]">
-        <div className='card-content w-1/2 bg-white '> <img className='object-cover' src='https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'></img></div>
-        <div class="flex card-content z-20 top-0 right-0 items-center justify-center">
-          <h2 className='flex text-xl justify-center items-center font-bold'>{props.heading}</h2>
-          <p className='p-4 font-semibold'>
-            {props.details}
-          </p>
-        </div>
+      // <div className="flex card h-[17rem] w-[28rem] sm:w-[28rem]">
+      //   <div class="flex card-content z-20 top-0 right-0 items-center justify-center">
+      //     <h2 className='flex text-xl justify-center items-center font-bold'>{props.heading}</h2>
+      //     <p className='p-4 font-semibold'>
+      //       {props.details}
+      //     </p>
+      //   </div>
+      // </div>
+      <div className='transition ease-in-out hover:scale-[1.03] rounded-lg flex border-3 h-[17rem] w-[28rem] border-[4px] border-black bg-white cursor-pointer '> 
+          <div className='flex card-content w-1/2 bg-white items-center'> <img className='object-cover' src='https://i.pinimg.com/736x/72/ed/3a/72ed3a4ee99cdd29917b5affcafa2e63.jpg'></img></div>
+          <div className='flex flex-col justify-center items-center card-content w-1/2 bg-white '> 
+            <div className='flex h-[3rem] items-center justify-center card text-2xl' >
+              Fox Lands
+            </div>
+            <div className='p-2'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore mag
+            </div>
+          </div>
       </div>
   );
 }
