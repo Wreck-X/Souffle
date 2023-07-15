@@ -2,12 +2,14 @@ import React from 'react'
 import Search from './Search'
 import Charitycard from './Charitycard'
 import '../../styles/charitypage.css'
+import TopBar from '../TopBar'
 export default function CharityPage() {
   const list = [1,2,3,4,5,6,7,8,9]
 
   return (
     <div className=''>
-      <div className='h-[5rem]'></div>
+      <TopBar></TopBar>
+      <div className='h-[2rem]'></div>
       <div className='flex justify-center'>
         <Search/>
       </div>

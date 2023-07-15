@@ -1,7 +1,7 @@
 import React from 'react'
 import { ChevronLeft } from 'react-iconly'
 import { useState, useEffect } from 'react';
-
+import '../styles/topbar.css'
 function TopBar() {
 
     const [showBorder, setShowBorder] = useState(false);
@@ -20,7 +20,7 @@ function TopBar() {
     }, []);
 
     return (
-        <div className={`sticky top-0 bg-white z-10 ${showBorder ? 'border-b-2 border-opacity-100' : ''}`}>
+        <div className={`sticky top-0 bg-white z-10 ${showBorder ? 'border-b-2 border-opacity-100 border-transition' : ''}`}>
             < ol class="flex justify-evenly items-center p-4 font-bold" >
                 <div>
                     <li class="inline"><ChevronLeft /></li>
