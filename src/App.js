@@ -5,7 +5,6 @@ import './index.css';
 import CharityTransactions from './pages/CharityTransactions';
 
 const App = () => {
-    getDataFromBB();
     return (
         <>
             <Routes>
