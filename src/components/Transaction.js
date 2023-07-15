@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card } from '@nextui-org/react'
 import { Button } from '@nextui-org/react'
-import { TimeSquare } from 'react-iconly'
 import { Document } from 'react-iconly'
 import { User } from 'react-iconly'
 import { Tooltip } from '@nextui-org/react'
@@ -24,7 +23,9 @@ function Transaction(props) {
                         </div>
                     </div >
                 </Card >
+
                 <div className='h-4'></div>
+
             </>
         )
     } else {

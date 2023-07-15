@@ -5,7 +5,6 @@ import TopBar from '../components/TopBar'
 import '../styles/charitypage.css'
 
 function Home() {
-    const list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     return (
         <>
             <TopBar></TopBar>
