@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/buttons.css'
+import '../../styles/buttons.css'
 export default function Landing() {
   return (
     <div className='grid'>

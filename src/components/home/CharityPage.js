@@ -7,11 +7,11 @@ export default function CharityPage() {
 
   return (
     <div className=''>
-      <div className='h-20'></div>
+      <div className='h-[5rem]'></div>
       <div className='flex justify-center'>
         <Search/>
       </div>
-      <div className='grid  grid-cols-3 mx-20 gap-y-9 my-9 place-items-center justify items-center '>
+      <div className='grid  lg:grid-cols-3 md:grid-cols-2 mx-20 gap-y-9 my-9 place-items-center justify items-center '>
         <Charitycard></Charitycard>
         <Charitycard></Charitycard>
         <Charitycard></Charitycard>
