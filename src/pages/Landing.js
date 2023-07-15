@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/buttons.css'
+import { Link } from 'react-router-dom'
 
 export default function Landing() {
   return (
@@ -17,7 +18,8 @@ export default function Landing() {
         </div>
         <div className="pt-6 mt-5 box-1">
           <div class="btn btn-one text-3xl w-1 ">
-            <span>Try Now!</span>
+            <span>
+              <Link to='/home'>Try Now!</Link></span>
           </div>
         </div>
       </div>

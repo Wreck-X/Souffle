@@ -1,7 +1,7 @@
 import React from 'react'
 import { ChevronLeft } from 'react-iconly'
 import { useState, useEffect } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '../styles/topbar.css'
 
 function TopBar() {
@@ -32,7 +32,7 @@ function TopBar() {
                     <li class="text-3xl inline tracking-[.20em]">Souffle</li>
                 </div>
                 <div>
-                        <li class="inline hover:underline cursor-pointer"><NavLink to="/home">Home</NavLink></li>
+                    <li class="inline hover:underline cursor-pointer"><Link to="/">Home</Link></li>
                 </div>
             </ol>
         </div>
