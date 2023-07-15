@@ -1,7 +1,6 @@
 import React from 'react'
 import '../styles/buttons.css'
-import { Link } from 'react-router-dom'
-
+import { Link } from '@nextui-org/react'
 export default function Landing() {
   return (
     <div className='grid bg-white'>
@@ -16,11 +15,12 @@ export default function Landing() {
         <div className='grid place-content-center text-2xl'>
           Building a transparent future for charities using blockchain innovation.
         </div>
-        <div className="pt-6 mt-5 box-1">
-          <div class="btn btn-one text-3xl w-1 ">
-            <span>
-              <Link to='/home'>Try Now!</Link></span>
-          </div>
+        <div className="box-1 pt-6 mt-5">
+          <Link to="\home"> 
+            <div class="flex justify-center items-center btn btn-one text-[23px] h-[3em] first-letter:w-[10rem]">
+              <span>Try Now!</span>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
