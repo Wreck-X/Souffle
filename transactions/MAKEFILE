@@ -1,14 +1,24 @@
-DFX = dfx
-PROJECT = ListContract
-CANISTER = list_contract
+.PHONY: all build install deploy
+.DEFAULT: all
 
-all: build
+PROJECT_NAME = ListContract
+MOC = dfx _ build
+DFX = dfx
+CANISTER_ID_FILE = .dfx/local/canister_ids.json
+CANDID_PATH = src/$(PROJECT_NAME)/main.did
+DIDC = dfx _ didc
+
+all: install build
+
+install:
+    sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
 
 build:
-	$(DFX) build $(CANISTER)
+    $(MOC)
 
 deploy: build
-	$(DFX) canister install $(CANISTER)
+    $(DFX) start --background
+    $(DFX) deploy
 
-clean:
-	$(DFX) clean
+candid: deploy
+	$(DIDC) $(CANISTER_ID_FILE) $(PROJECT_NAME) -o $(CANDID_PATH)
