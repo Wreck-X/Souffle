@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/charitypage.css'
+import '../styles/card.css'
 
 export default function Charitycard(props) {
   return (
