@@ -10,7 +10,7 @@ function Transaction(props) {
     if (props.income) {
         return (
             <>
-                <Card css={{ borderRadius: '0.3rem', height: 'auto' }} isHoverable={true} isPressable={true}>
+                <Card css={{ borderRadius: '0.3rem', height: 'auto', width: '22rem' }} isHoverable={true} isPressable={true}>
                     <div className='flex items-center justify-between'>
                         <div className='font-bold text-2xl text-green-500 mr-1 ml-1'>+${props.amount.toString().padStart(6, '0')}</div>
                         <div className='text-slate-500 text-xs mr-5'>{props.id}</div>
@@ -31,7 +31,7 @@ function Transaction(props) {
     } else {
         return (
             <>
-                <Card css={{ borderRadius: '0.3rem', height: 'auto' }} isHoverable={true} isPressable={true}>
+                <Card css={{ borderRadius: '0.3rem', height: 'auto', width: '22rem' }} isHoverable={true} isPressable={true}>
                     <div className='flex items-center justify-between'>
                         <div className='font-bold text-2xl text-red-500 mr-1 ml-1'>-${props.amount.toString().padStart(6, '0')}</div>
                         <div className='text-slate-500 text-xs mr-5'>{props.id}</div>
