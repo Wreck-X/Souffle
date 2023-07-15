@@ -5,7 +5,6 @@ actor ListContract {
 
     public func append(item: Text): async () {
         list := Array.append<Text>(list, [item]);
-        return 0;
     };
 
     public func getItems(): async [Text] {
