@@ -16,7 +16,7 @@ auth_data = json.loads(auth_response.text)
 access_token = auth_data['access_token']
 
 # Set up the donation details
-def Donate():
+def Donate(amount):
     donation_data = {
         "intent": "sale",
         "payer": {
@@ -25,7 +25,7 @@ def Donate():
         "transactions": [
             {
                 "amount": {
-                    "total": "19.00",
+                    "total": amount,
                     "currency": "USD"
                 },
                 "description": "Donation to My Cause"
@@ -42,11 +42,13 @@ def Donate():
     donation_headers = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + access_token}
     donation_response = requests.post(donation_url, headers=donation_headers, data=json.dumps(donation_data))
     donation_data = json.loads(donation_response.text)
+    print(donation_data)
     donation_id = donation_data['id']
     donation_approval_url = next(link['href'] for link in donation_data['links'] if link['rel'] == 'approval_url')
 
     # Redirect the user to PayPal for donation approval
     print('Please visit the following URL to make a donation:', donation_approval_url)
+    return donation_approval_url
 
 def Pay():
     email = input("Enter recipient email: ")

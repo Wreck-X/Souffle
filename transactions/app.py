@@ -2,6 +2,8 @@ import json
 from fastapi import Request, FastAPI
 from ic import Identity, Agent, Client
 from ic.canister import Canister
+from fastapi.middleware.cors import CORSMiddleware
+from makeTransactions import Donate
 
 identity = Identity()
 client = Client(url="http://localhost:4943")
@@ -15,6 +17,16 @@ canister = Canister(agent, canister_id)
 
 app = FastAPI()
 
+origins = ["*"]  # Replace * with the actual domain from which you want to allow requests
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],  # You can specify specific methods, e.g., ["POST"], if needed
+    allow_headers=["*"],  # You can specify specific headers, e.g., ["Content-Type"], if needed
+)
+
 @app.post("/webhooks")
 async def root(request: Request):
     webhook_data = await request.body()
@@ -22,12 +34,17 @@ async def root(request: Request):
     data = json.loads(data)
     element = json_check(data)
     canister.append(str(element))
-
     return 'ok', 200
+
+@app.post("/PayPal")
+async def root(request: Request):
+    req_data = await request.body()
+    req_data = json.loads(req_data)
+    redirect = Donate(req_data['amount'])
+    return redirect , 200
 
 @app.get("/transaction_data")
 async def root(request: Request):
-
     response = canister.getItems()
     print(response)
     return response, 200
@@ -103,7 +120,7 @@ def json_check(data):
     except Exception as e:
         print(e)
         print(Exception)
-        return e
+        raise e
 
     return data
 
