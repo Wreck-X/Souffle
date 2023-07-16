@@ -11,8 +11,8 @@ export default function CharityTransactions() {
     <>
       <TopBar></TopBar>
       <div className="h-[2.5rem]"></div>
-      <p className="grid grid-cols-2 gap-16 -mb-10 ml-64 text-xl">Transactions</p>
-      <div className="grid grid-cols-2 gap-16 m-14 mx-48">
+      <p className="grid grid-cols-2 gap-16 ml-64 -mb-10 text-xl">Transactions</p>
+      <div className="grid grid-cols-2 gap-16 mx-48 m-14">
         <div className=" justify-center items-center  overflow-scroll h-[40rem]">
           <Transaction></Transaction>
           <Transaction></Transaction>
@@ -24,12 +24,12 @@ export default function CharityTransactions() {
           <Transaction></Transaction>
           <Transaction></Transaction>
         </div>
-        {/* <div className="flex justify-center items-center"> */}
+        {/* <div className="flex items-center justify-center"> */}
         <Graph></Graph>
         {/* </div> */}
 
         <div className="flex flex-col">
-          <div className="grid place-content-center h-full">
+          <div className="grid h-full place-content-center">
             <div
               class="btn btn-one flex justify-center items-center text-[23px] -mt-10 w-[20rem] h-[5rem]"
               onClick={handleTransfer}

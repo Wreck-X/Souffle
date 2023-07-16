@@ -7,7 +7,7 @@ import "../styles/charitypage.css";
 function Home() {
   return (
     <>
-      <div className="home-container h-full w-full">
+          <div className="w-full h-full home-container">
         <TopBar></TopBar>
         <div className="h-[2rem]"></div>
         <div className="flex justify-center mt-10">
