@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Chair } from '@mui/icons-material'
 import Charitycard from '../components/Charitycard'
+import Loader from '../components/Loader'
 
 export default function CharityTransactions(props) { 
   const handleTransfer = () => {
@@ -42,7 +43,7 @@ export default function CharityTransactions(props) {
     )
   } else if (!isLoaded) {
     return (
-      <div>Loading</div>
+      <Loader />
     )
   } else {
 

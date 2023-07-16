@@ -7,6 +7,7 @@ import '../styles/charitypage.css'
 import { useEffect, useState } from 'react'
 import CharityTransactions from './CharityTransactions'
 import { Link } from 'react-router-dom'
+import Loader from '../components/Loader'
 
 function Home() {
     const [error, setError] = useState(null);
@@ -37,7 +38,7 @@ function Home() {
         )
     } else if (!isLoaded) {
         return (
-            <div>Loading</div>
+            <Loader />
         )
     } else {
 
