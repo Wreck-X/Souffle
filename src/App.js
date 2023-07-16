@@ -4,6 +4,7 @@ import Landing from './pages/Landing';
 import Payment from './pages/Payment';
 import './index.css';
 import CharityTransactions from './pages/CharityTransactions';
+import { useEffect } from 'react';
 
 const App = () => {
     return (

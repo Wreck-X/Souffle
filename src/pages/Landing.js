@@ -3,6 +3,8 @@ import "../styles/buttons.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 export default function Landing() {
+
+
   return (
     <>
 
@@ -30,4 +32,5 @@ export default function Landing() {
       </div>
     </>
   );
+
 }

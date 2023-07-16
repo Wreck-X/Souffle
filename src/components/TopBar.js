@@ -30,7 +30,14 @@ function TopBar() {
       setShowBackButton(true);
     }
 
-  });
+    useEffect(() => {
+        if (window.location.pathname === "/home") {
+            setShowBackButton(false);
+        } else {
+            setShowBackButton(true);
+        }
+    });
+
 
     // return (
 
