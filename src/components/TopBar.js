@@ -25,7 +25,7 @@ function TopBar() {
     const [showBackButton, setShowBackButton] = useState(false);
 
     useEffect(() => {
-        if (window.location.pathname == "/home") {
+        if (window.location.pathname === "/home") {
             setShowBackButton(false);
         } else {
             setShowBackButton(true);
