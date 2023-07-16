@@ -4,6 +4,8 @@ import Charitycard from '../components/Charitycard'
 import TopBar from '../components/TopBar'
 import '../styles/charitypage.css'
 import { useEffect, useState } from 'react'
+import CharityTransactions from './CharityTransactions'
+import { Link } from 'react-router-dom'
 
 function Home() {
     const [error, setError] = useState(null);
@@ -38,9 +40,8 @@ function Home() {
         )
     } else {
 
-        console.log(items[0][0][0])
-        console.log(JSON.parse('{"Organisation": "test","data": {"WH-8SF49949JV771893F-2AY68533SW000372X": {"summary": "Payouts batch completed successfully.","resource_type": "payouts","total": "10.00","create_time": "2023-07-15T15:51:32Z","recipient": "Multiple recipients"}}}'))
-    return (
+        let response = JSON.parse(items[0])
+        return (
         <>
             <TopBar></TopBar>
             <div className='h-[2rem]'></div>
@@ -49,9 +50,13 @@ function Home() {
             </div>
             <div className='grid items-center lg:grid-cols-3 md:grid-cols-2 lg:mx-48 md:mx-0 gap-y-9 my-9 place-items-center justify '>
                 <ul>
-                    {items.map(item => (
-                        <li>{typeof (item[0])}</li>
-                    ))}
+                        {Object.keys(response).map(charity =>
+                            <ul>
+                                <Link to={"/transactions"} state={{ name: "test" }}>
+                                    <li><Charitycard name={charity} /></li>
+                                </Link>
+                            </ul>
+                        )}
                 </ul>
             </div>
         </>
