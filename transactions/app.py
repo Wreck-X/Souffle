@@ -16,7 +16,8 @@ async def root(request: Request):
     webhook_data = await request.body()
     data = webhook_data.decode("utf-8")
     data = json.loads(data)
-    x = check_for_success(data)
+    element = json_check(data)
+    canister.append(str(element))
 
     return 'ok', 200
 
@@ -45,10 +46,10 @@ async def root(request: Request):
          }
     return x
 
-def check_for_success(data):
+def json_check(data):
     try:
         if data["event_type"] == "PAYMENT.SALE.COMPLETED":
-            x = {"Organisation": 'test',
+            data = {"Organisation": 'test',
                  'data': {
                      data["id"]: {
                          'summary': data["summary"],
@@ -59,18 +60,19 @@ def check_for_success(data):
                     }
                  }
         elif data["event_type"] == "PAYMENT.PAYOUTSBATCH.SUCCESS":
-            x = {"Organisation": 'test',
+            data = {"Organisation": 'test',
                  'data': {
                      data["id"]: {
                          'summary': data["summary"],
                          'resource_type': data["resource_type"],
                          'total': data["resource"]['batch_header']["amount"]["value"],
-                         'create_time': data["resource"]["time_create"],
+                         'create_time': data["resource"]["batch_header"]["time_created"],
                          'recipient': 'Multiple recipients'}
-                    }
                  }
+                 }
+
         elif data["event_type"] == "PAYMENT.PAYOUTS-ITEM.SUCCEEDED":
-            x = {"Organisation": 'test',
+            data = {"Organisation": 'test',
                  'data': {
                      data["id"]: {
                          'summary': data["summary"],
@@ -81,11 +83,12 @@ def check_for_success(data):
                     }
                  }
         else:
-            raise Exception
+            print('invalid event_type')
 
     except Exception as e:
         print(e)
+        print(Exception)
         return e
 
-    return x
+    return data
 
