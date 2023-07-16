@@ -1,5 +1,4 @@
 import json
-import subprocess
 from fastapi import Request, FastAPI
 from ic import Identity, Agent, Client
 from ic.canister import Canister
@@ -7,7 +6,12 @@ from ic.canister import Canister
 identity = Identity()
 client = Client(url="http://localhost:4943")
 agent = Agent(identity, client)
-canister = Canister(agent, "br5f7-7uaaa-aaaaa-qaaca-cai")
+
+with open('.dfx/local/canister_ids.json') as x:
+    y = json.load(x)
+    canister_id =y['transactions']['local']
+
+canister = Canister(agent, canister_id)
 
 app = FastAPI()
 
@@ -26,7 +30,7 @@ async def root(request: Request):
 
     response = canister.getItems()
     print(response)
-    return response
+    return response, 200
 
 
 @app.get("/test")
@@ -48,7 +52,18 @@ async def root(request: Request):
 
 def json_check(data):
     try:
-        if data["event_type"] == "PAYMENT.SALE.COMPLETED":
+        if data["event_type"] == "PAYMENTS.PAYMENT.CREATED":
+            data = {"Organisation": 'test',
+                 'data': {
+                     data["id"]: {
+                         'summary': data["summary"],
+                         'resource_type': data["resource_type"],
+                         'total': data["resource"]["transactions"][0]["amount"]["total"],
+                         'create_time': data["resource"]["create_time"],
+                         'recipient': ''}
+                    }
+                 }
+        elif data["event_type"] == "PAYMENT.SALE.COMPLETED":
             data = {"Organisation": 'test',
                  'data': {
                      data["id"]: {
