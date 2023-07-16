@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Search from '../components/Search'
 import Charitycard from '../components/Charitycard'
@@ -60,10 +61,8 @@ function Home() {
                 </ul>
             </div>
         </>
-
-
     )
 }
 }
 
-export default Home
+export default Home;

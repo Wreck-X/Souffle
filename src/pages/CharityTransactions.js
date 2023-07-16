@@ -1,3 +1,4 @@
+
 import React from 'react'
 import TopBar from '../components/TopBar'
 import Transaction from '../components/Transaction'
@@ -7,7 +8,10 @@ import { useLocation } from 'react-router-dom'
 import { Chair } from '@mui/icons-material'
 import Charitycard from '../components/Charitycard'
 
-export default function CharityTransactions(props) {
+export default function CharityTransactions(props) { 
+  const handleTransfer = () => {
+    window.location.href = "/payment";
+  };
   const location = useLocation();
   const { name } = location.state
   const [error, setError] = useState(null);
@@ -78,17 +82,22 @@ export default function CharityTransactions(props) {
               })}
             </ul>
         </div>
+        {/* <div className="flex items-center justify-center"> */}
+        <Graph></Graph>
+        {/* </div> */}
+        <div className="flex flex-col">
+          <div className="grid h-full place-content-center">
+            <div
+              class="btn btn-one flex justify-center items-center text-[23px] -mt-10 w-[20rem] h-[5rem]"
+              onClick={handleTransfer}
+            >
+              <span>TRANSFER</span>
 
-        <div className='flex flex-col'>
-            <Graph></Graph>
-            <div className='grid h-full place-content-center'>
-            <div class="btn btn-one flex justify-center items-center text-[23px] w-[20rem] h-[10rem]">
-                <span>TRANSFER</span>
             </div>
-            </div>
+          </div>
         </div>
-    </div>
+      </div>
     </>
-  )
+  );
 }
 }
