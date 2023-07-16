@@ -55,6 +55,7 @@ async def root(request: Request):
         json_obj = json.loads(json_str.replace("'", "\""))
         org_name = json_obj['Organisation']
         data = json_obj['data']
+        json_obj['description'] = "At <test organisation>, we prioritize compassion, dignity, and respect in all our interactions. Our dedicated team of professionals and volunteers works tirelessly to create a safe and nurturing environment where individuals can access the tools and resources they need to thrive. We also offer counseling, mentorship, and community engagement activities to foster personal growth, resilience, and social connection."
         if org_name not in result:
             result[org_name] = []
         result[org_name].append(data)
@@ -89,7 +90,7 @@ def json_check(data):
                          'resource_type': data["resource_type"],
                          'total': data["resource"]["transactions"][0]["amount"]["total"],
                          'create_time': data["resource"]["create_time"],
-                         'recipient': ''}
+                         'recipient': ''},
                     }
                  }
         elif data["event_type"] == "PAYMENT.SALE.COMPLETED":
