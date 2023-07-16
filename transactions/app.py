@@ -1,5 +1,6 @@
 import json
 from fastapi import Request, FastAPI
+from fastapi.responses import JSONResponse
 from ic import Identity, Agent, Client
 from ic.canister import Canister
 from fastapi.middleware.cors import CORSMiddleware
@@ -23,8 +24,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],  # You can specify specific methods, e.g., ["POST"], if needed
-    allow_headers=["*"],  # You can specify specific headers, e.g., ["Content-Type"], if needed
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 @app.post("/webhooks")
@@ -36,6 +37,7 @@ async def root(request: Request):
     canister.append(str(element))
     return 'ok', 200
 
+
 @app.post("/PayPal")
 async def root(request: Request):
     req_data = await request.body()
@@ -43,11 +45,21 @@ async def root(request: Request):
     redirect = Donate(req_data['amount'])
     return redirect , 200
 
+
+
 @app.get("/transaction_data")
 async def root(request: Request):
-    response = canister.getItems()
-    print(response)
-    return response, 200
+    response = canister.getItems()[0]
+    result = {}
+    for json_str in response:
+        json_obj = json.loads(json_str.replace("'", "\""))
+        org_name = json_obj['Organisation']
+        data = json_obj['data']
+        if org_name not in result:
+            result[org_name] = []
+        result[org_name].append(data)
+    result_json = json.dumps(result)
+    return result_json, 200
 
 
 @app.get("/test")
@@ -124,3 +136,5 @@ def json_check(data):
 
     return data
 
+def properjson():
+    pass
