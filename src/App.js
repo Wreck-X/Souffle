@@ -5,6 +5,7 @@ import Payment from './pages/Payment';
 import './index.css';
 import CharityTransactions from './pages/CharityTransactions';
 import { useEffect } from 'react';
+import SuccessfulTransaction from './pages/SuccessfulTransaction';
 
 const App = () => {
     return (
@@ -14,7 +15,7 @@ const App = () => {
                 <Route path="/home" element={<Home />} />
                 <Route path="/payment" element={<Payment />} />
                 <Route path="/transactions" element={<CharityTransactions />} />
-
+                <Route path="/successful" element={<SuccessfulTransaction />} />
             </Routes>
         </>
     );
