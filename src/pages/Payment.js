@@ -6,7 +6,7 @@ const Payment = () => {
   return (
     <>
       <TopBar />
-      <PaymentCard bankID="whadahek"/>
+      <PaymentCard bankID="sb-al7am26189088@business.example.com"/>
     </>
   );
 };

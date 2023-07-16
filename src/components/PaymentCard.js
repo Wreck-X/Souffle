@@ -16,7 +16,7 @@ function PayPal() {
 
 function Input(props) {
   return (
-    <div className="flex flex-col mt-10 ">
+    <div className="flex flex-col mt-10"> 
       <label className="text-xl">{props.label}</label>
       <input
         required
@@ -56,12 +56,12 @@ function PaymentCard(props) {
 
   return (
     <>
-      <div className="flex justify-center items-center mt-14">
+      <div className="flex justify-center items-center mt-28">
         <Card css={{ borderRadius: "2rem", height: "650px", width: "720px" }}>
           <div className="flex flex-col justify-center mx-auto">
             <h1 className="text-5xl font-bold mt-16 mb-8">Transfer Money</h1>
             <div className="mt-14">
-              <label className="text-xl">Bank ID</label>
+              <label className="text-xl">Receiver ID</label>
               <div className="z-1 bg-gray-200 text-lg lg:min-w-[30rem] min-h-[4rem] md:min-w-[20rem] sm:min-w-[20rem] min-w-[10rem] rounded-full drop-shadow-lg p-5 text-gray-600 outline-none mt-2">
                 <div>{props.bankID}</div>
               </div>
