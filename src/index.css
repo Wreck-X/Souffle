@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.landing-container {
+  /* Set the background image URL here */
+  background-image: url("https://blog.chainalysis.com/wp-content/uploads/2020/07/080720201594208450-scaled.jpeg");
+  /* Set background size and other properties as needed */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* opacity: 0.8; */
+}
+
+.home-container {
+  /* Set the background image URL here */
+  /* background-image: url("https://wallpapercave.com/wp/wp2337041.jpg"); */
+  /* Set background size and other properties as needed */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
