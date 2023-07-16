@@ -40,11 +40,11 @@ function TopBar() {
 
         <div className={`sticky top-0 bg-white z-10 ${showBorder ? 'border-b-2 border-opacity-100 border-transition' : ''}`}>
             < ol class="flex justify-evenly items-center p-4 font-bold" >
-                <div className={`transition ease-in-out cursor-pointer w-12 h-12 hover:bg-[#DDDDDD] flex items-center justify-center rounded-full ${!showBackButton ? 'opacity-0' : ''}`}>
-                    <button onClick={goBack}>
+                <button onClick={goBack}>
+                    <div className={`transition ease-in-out cursor-pointer w-12 h-12 hover:bg-[#DDDDDD] flex items-center justify-center rounded-full ${!showBackButton ? 'opacity-0' : ''}`}>
                     <li class="inline "><ChevronLeft /></li>
-                    </button>
-                </div>
+                    </div>
+                </button>
                 <div className=''>
                     <li class="text-3xl inline tracking-[.20em]">Souffle</li>
                 </div>
