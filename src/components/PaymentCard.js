@@ -32,12 +32,14 @@ function PaymentCard(props) {
   return (
     <>
       <div className="flex justify-center items-center mt-14">
-        <Card
-          css={{ borderRadius: "2rem", height: "700px", width: "720px" }}         
-        >
-          <div className="flex flex-col justify-center items-center mx-auto">
-            <h1 className="text-5xl font-bold mt-20">Transfer Money</h1>
-            <div className="mt-5">
+        <Card css={{ borderRadius: "2rem", height: "650px", width: "720px" }}>
+          <div className="flex flex-col justify-center mx-auto">
+            <h1 className="text-5xl font-bold mt-16 mb-8">Transfer Money</h1>
+            <div className="mt-14">
+              <label className="text-xl">Bank ID</label>
+              <div className="z-1 bg-gray-200 text-lg lg:min-w-[30rem] min-h-[4rem] md:min-w-[20rem] sm:min-w-[20rem] min-w-[10rem] rounded-full drop-shadow-lg p-5 text-gray-600 outline-none mt-2">
+                <div>{props.bankID}</div>
+              </div>
               <Input
                 label="PayPal ID"
                 placeholder="Enter your email, phone or id"
