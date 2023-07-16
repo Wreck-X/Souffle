@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Card } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import makeTransaction from "../services/MakeTransactions";
+import { useNavigate } from "react-router-dom";
 
 function PayPal() {
   return (
@@ -15,7 +16,7 @@ function PayPal() {
 
 function Input(props) {
   return (
-    <div className="flex flex-col mt-10">
+    <div className="flex flex-col mt-10 ">
       <label className="text-xl">{props.label}</label>
       <input
         required
@@ -29,17 +30,28 @@ function Input(props) {
 
 function PaymentCard(props) {
   const [amount, setAmount] = useState("");
-  const [ID, setID] = useState("");
 
-  const handlePayment = () => {
-    if (amount === "" || ID === "") {
+  const navigate = useNavigate();
+  const goBack = () => {
+    navigate(-1);
+  };
+  const handlePayment = async () => {
+    if (amount === "") {
       alert("Please fill in all the fields!");
       return;
     }
-    console.log(amount);
-    console.log(ID);
 
-    makeTransaction(ID, amount);
+    console.log(amount);
+
+    try {
+      const redirectURL = await makeTransaction(amount);
+      if (redirectURL !== undefined) {
+        goBack();
+        window.open(redirectURL, "_blank");
+      }
+    } catch (error) {
+      console.error("Error:", error.message);
+    }
   };
 
   return (
@@ -53,11 +65,6 @@ function PaymentCard(props) {
               <div className="z-1 bg-gray-200 text-lg lg:min-w-[30rem] min-h-[4rem] md:min-w-[20rem] sm:min-w-[20rem] min-w-[10rem] rounded-full drop-shadow-lg p-5 text-gray-600 outline-none mt-2">
                 <div>{props.bankID}</div>
               </div>
-              <Input
-                label="PayPal ID"
-                placeholder="Enter your email, phone or id..."
-                onChange={(value) => setID(value)} 
-              />
               <Input
                 label="Amount (in USD)"
                 placeholder="Enter amount..."

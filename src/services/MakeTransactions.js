@@ -1,9 +1,9 @@
-async function makeTransaction(ID, amount) {
+async function makeTransaction(amount) {
   console.log("Making transaction...");
-  const apiUrl = "https://souffle.biscuitbobby.me/transaction_data";
+  const apiUrl = "https://souffle.biscuitbobby.me/PayPal/";
   const requestData = {
-    "id": ID,
-    "amount": amount,
+    // "id": ID,
+    amount: amount,
   };
 
   const requestOptions = {
@@ -19,6 +19,7 @@ async function makeTransaction(ID, amount) {
     const responseData = await response.json();
 
     console.log(responseData);
+    return responseData[0];
   } catch (error) {
     console.error("Error:", error.message);
   }
