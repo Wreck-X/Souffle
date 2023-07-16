@@ -9,10 +9,6 @@ import { Chair } from '@mui/icons-material'
 import Charitycard from '../components/Charitycard'
 import Loader from '../components/Loader'
 
-<<<<<<< HEAD
-export default function CharityTransactions() {
-  return (
-=======
 export default function CharityTransactions(props) { 
   const handleTransfer = () => {
     window.location.href = "/payment";
@@ -53,7 +49,6 @@ export default function CharityTransactions(props) {
 
     let response = JSON.parse(items[0])
     return (
->>>>>>> experiment
     <>
     <TopBar></TopBar>
     <div className='grid grid-cols-2 gap-16 m-20 mx-48'>
@@ -69,15 +64,6 @@ export default function CharityTransactions(props) {
                 if (recipientVal == "") {
                   income = true
 
-<<<<<<< HEAD
-        <div className='flex flex-col'>
-            <Graph></Graph>
-            <div className='grid place-content-center h-full'>
-            <div class="btn btn-one flex justify-center items-center text-[23px] w-[20rem] h-[10rem]">
-                <span>TRANSFER</span>
-            </div>
-            </div>
-=======
                 }
                 console.log(income)
                 if (income) {
@@ -96,7 +82,6 @@ export default function CharityTransactions(props) {
                 }
               })}
             </ul>
->>>>>>> experiment
         </div>
         {/* <div className="flex items-center justify-center"> */}
         <Graph></Graph>
