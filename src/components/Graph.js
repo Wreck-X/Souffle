@@ -1,6 +1,8 @@
 import React from 'react'
 import { Bar } from 'react-chartjs-2';
 
+
+
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -31,31 +33,37 @@ export const options = {
             text: 'Chart.js Bar Chart',
         },
     },
-};
+    title: {
+      display: true,
+      text: 'Inflow vs Expense',
+    },
+  };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June'];
+
+const labels = ['14:00', '14:30', '15:00','15:30','16:00','16:30'];
 
 export const data = {
-    labels,
-    datasets: [
-        {
-            label: 'Dataset 1',
-            data: [100, 200, 300],
-            backgroundColor: 'rgba(255, 99, 132, 0.5)',
-        },
-        {
-            label: 'Dataset 2',
-            data: [80, 210, 300],
-            backgroundColor: 'rgba(51, 255, 90, 0.5)',
-        },
-    ],
+  labels,
+  datasets: [
+    {
+      label: 'Inflow',
+      data: [10,30,42, 20, 30, 45],
+      backgroundColor: 'rgba(51, 255, 90, 0.5)',
+    },
+    {
+      label: 'Expense',
+      data: [27,17,29 , 10, 20, 35],
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+
+    },
+  ],
 };
 
 export default function Graph() {
-    return (
-        <div className='h-[23rem] w-auto'>
-            <Bar className='' data={data} options={options}></Bar>
-        </div>
+  return (
+    <div className='flex h-auto w-[40%] flex-col justify-center items-center'>
+          <Bar className='' data={data} options={options}></Bar>
+    </div>
 
     )
 }
