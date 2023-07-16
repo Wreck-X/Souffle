@@ -2,6 +2,7 @@ import requests
 import json
 import time
 
+
 # Set up the API credentials and URLs
 client_id = 'Ab5GX8vPqKXDLfGHDIZJbSo-UTU3-h6VPUox8rdOcGTOosMUHuLmoiXQru_ycYC376STYx-FJ9HtDSaK'
 client_secret = 'EPS5KUzVEZ_pRf-PRRh1B1IHGeNpExUMZ1Ia-NHUJ00VAFqD2EB3GJuzkpO819You8ukhbnzmxT320b6'
@@ -24,7 +25,7 @@ def Donate():
         "transactions": [
             {
                 "amount": {
-                    "total": "10.00",
+                    "total": "19.00",
                     "currency": "USD"
                 },
                 "description": "Donation to My Cause"
@@ -46,20 +47,6 @@ def Donate():
 
     # Redirect the user to PayPal for donation approval
     print('Please visit the following URL to make a donation:', donation_approval_url)
-
-    # After the user approves the donation on PayPal and returns to your website
-    execute_donation_url = base_url + '/v1/payments/payment/' + donation_id + '/execute'
-    donor_payer_id = input('Enter the PayerID from the donation approval URL: ')
-    execute_donation_data = {'payer_id': donor_payer_id}
-    execute_donation_response = requests.post(execute_donation_url, headers=donation_headers, data=json.dumps(execute_donation_data))
-    execute_donation_data = json.loads(execute_donation_response.text)
-    print(execute_donation_data)
-    if execute_donation_data['state'] == 'approved':
-        
-        print('Donation successfully completed.')
-    else:
-        print('Donation execution failed.')
-
 
 def Pay():
     email = input("Enter recipient email: ")
