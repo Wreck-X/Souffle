@@ -18,18 +18,14 @@ actor ListContract{
     recipient: Text;
   };
 
-  let organisations = Map.HashMap<Name, Data>(0, Text.equal, Text.hash);
+    var list: [Text] = [];
 
-  public func insert(name : Name, Data : Data): async () {
-    organisations.put(name, Data);
-    lookup_list := Array.append<Name>(lookup_list, [name]);
-  };
-
-  public query func lookup(name : Name) : async ?Data {
-    organisations.get(name)
-  };
-
-  public func getOrgs(): async [Text] {
-      return lookup_list;
+    public func append(item: Text): async () {
+        list := Array.append<Text>(list, [item]);
+        return 0;
     };
+
+    public func getItems(): async [Text] {
+      return list;
+    }
 };
